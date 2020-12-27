@@ -10,6 +10,8 @@ app.use(cors());
 const posts = {};
 
 const handleEvent = (type, data) => {
+  console.log("handle Event:", type);
+  
   if (type === "PostCreated") {
     const { id, title } = data;
 
