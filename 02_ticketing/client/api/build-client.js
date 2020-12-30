@@ -5,7 +5,9 @@ export default ({ req }) => {
     // We are on the server
 
     return axios.create({
-      baseURL: 'http://ingress-nginx.ingress-nginx.svc.cluster.local',
+      // http://<Service-Name>.<namespace>.svc.cluster.local
+      baseURL: 'http://my-release-ingress-nginx-controller.default.svc.cluster.local',
+      // pass the cookie, host['ticketing.dev'] as well, otherwise the ingress does not work
       headers: req.headers
     });
   } else {
