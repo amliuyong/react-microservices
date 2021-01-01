@@ -68,9 +68,9 @@ https://github.com/amliuyong/react-microservices/tree/main/02_ticketing/common
 
 # Nats Streaming Server
 
-`kubectl port-forward nats-depl-b946946dd-2zns2 4222:4222`
+`kubectl port-forward nats-depl-54fbfb678d-45z4q 4222:4222`
 
-`kubectl port-forward nats-depl-b946946dd-2zns2 8222:8222`
+`kubectl port-forward nats-depl-54fbfb678d-45z4q 8222:8222`
 
 http://127.0.0.1:8222/streaming
 
