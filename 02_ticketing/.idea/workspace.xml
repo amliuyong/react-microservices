@@ -2,23 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3416a163-5d9b-4546-8305-0336e4639b24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jpg/handle-event-using-versions.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpg/handle-event.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpg/how-to-handle-disorder-event-traceOrder.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jpg/how-to-handle-disorder-event.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/nats-depl.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/nats-depl.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/tickets-depl.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/tickets-depl.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/models/ticket.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/models/ticket.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/src/routes/new.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/new.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/routes/show.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/show.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/src/routes/update.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/update.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/test/setup.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +43,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/infra/k8s" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/tickets/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/common/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/nats-test/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -58,11 +56,12 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tickets/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/infra/k8s" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.updates the ticket provided valid inputs">
+  <component name="RunManager" selected="Jest.creates a ticket with valid inputs">
     <configuration name="can fetch a list of tickets" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -76,6 +75,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="creates a ticket with valid inputs" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/tickets/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/tickets" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" />
+      <test-names>
+        <test-name value="creates a ticket with valid inputs" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="returns a 404 if the ticket is not found" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -86,19 +98,6 @@
       <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/show.test.ts" />
       <test-names>
         <test-name value="returns a 404 if the ticket is not found" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="returns an error if an invalid title is provided" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/tickets/node_modules/jest" />
-      <working-dir value="$PROJECT_DIR$/tickets" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" />
-      <test-names>
-        <test-name value="returns an error if an invalid title is provided" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -130,11 +129,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.creates a ticket with valid inputs" />
         <item itemvalue="Jest.updates the ticket provided valid inputs" />
         <item itemvalue="Jest.can fetch a list of tickets" />
         <item itemvalue="Jest.returns a 404 if the ticket is not found" />
         <item itemvalue="Jest.returns the ticket if the ticket is found" />
-        <item itemvalue="Jest.returns an error if an invalid title is provided" />
       </list>
     </recent_temporary>
   </component>
@@ -149,6 +148,7 @@
       <workItem from="1609232880407" duration="9269000" />
       <workItem from="1609290220973" duration="15975000" />
       <workItem from="1609316235850" duration="6593000" />
+      <workItem from="1609507470154" duration="1303000" />
     </task>
     <servers />
   </component>

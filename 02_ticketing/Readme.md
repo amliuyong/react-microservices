@@ -76,6 +76,9 @@ http://127.0.0.1:8222/streaming
 
 http://127.0.0.1:8222/streaming/channelsz?subs=1
 
+
+https://github.com/amliuyong/react-microservices/tree/main/02_ticketing/nats-test/src
+
 ### Publish
 ```javascript
 import nats from 'node-nats-streaming';
