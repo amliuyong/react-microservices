@@ -1,6 +1,37 @@
 https://ticketing.dev/
-
 `thisisunsafe`
+
+# install ingress-nginx
+```
+ kubectl apply -f ingress-ngin-controller.yaml
+
+ or 
+ 
+ https://kubernetes.github.io/ingress-nginx/deploy/#docker-for-mac
+
+```
+
+http://ingress-nginx-controller.ingress-nginx.svc.cluster.local
+
+
+
+```
+sudo visudo
+
+dayong-mac      ALL = (ALL) NOPASSWD: ALL
+```
+
+```
+sudo vi /etc/hosts
+
+127.0.0.1 ticketing.dev
+```
+
+
+# secret for jwt-secret
+``
+ kubectl create secret  generic jwt-secret --from-literal JWT_KEY=mykey123!
+```
 
 ![](./jpg/overview.jpg)
 ![](./jpg/services.jpg)

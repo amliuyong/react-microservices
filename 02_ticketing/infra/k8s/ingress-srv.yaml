@@ -22,3 +22,5 @@ spec:
             backend:
               serviceName: client-srv
               servicePort: 3000
+
+              # http://ingress-nginx-controller.ingress-nginx.svc.cluster.local

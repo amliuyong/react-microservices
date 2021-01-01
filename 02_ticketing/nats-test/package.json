@@ -7,7 +7,6 @@
     "publish": "ts-node-dev --rs --notify false src/publisher.ts",
     "listen": "ts-node-dev --rs --notify false src/listener.ts"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
