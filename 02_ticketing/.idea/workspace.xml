@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3416a163-5d9b-4546-8305-0336e4639b24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/src/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/orders/src/routes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/orders/package.json" />
+    <dismissed value="$PROJECT_DIR$/tickets/package.json" />
   </component>
   <component name="ProjectId" id="1mKCPsTL1tgtDF1KpIy2qNjSxsI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -146,7 +148,7 @@
       <workItem from="1609583600980" duration="25000" />
       <workItem from="1609583660803" duration="829000" />
       <workItem from="1609584710667" duration="427000" />
-      <workItem from="1609585223365" duration="689000" />
+      <workItem from="1609585223365" duration="1963000" />
     </task>
     <servers />
   </component>
