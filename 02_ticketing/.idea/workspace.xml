@@ -3,20 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3416a163-5d9b-4546-8305-0336e4639b24" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/auth/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infra/k8s/tickets-depl.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/tickets-depl.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/models/ticket.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/models/ticket.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/nats-wrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/nats-wrapper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/index.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/routes/new.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/new.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/routes/update.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/update.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tickets/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/test/setup.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +52,7 @@
       <recent name="$PROJECT_DIR$/infra/k8s" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.creates a ticket with valid inputs">
+  <component name="RunManager" selected="Jest.publishes an event (1)">
     <configuration name="can fetch a list of tickets" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -88,29 +79,29 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="returns a 404 if the ticket is not found" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="publishes an event (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/tickets/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/tickets" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/show.test.ts" />
+      <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" />
       <test-names>
-        <test-name value="returns a 404 if the ticket is not found" />
+        <test-name value="publishes an event" />
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="returns the ticket if the ticket is found" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="publishes an event" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
       <jest-package value="$PROJECT_DIR$/tickets/node_modules/jest" />
       <working-dir value="$PROJECT_DIR$/tickets" />
       <envs />
       <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/show.test.ts" />
+      <test-file value="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" />
       <test-names>
-        <test-name value="returns the ticket if the ticket is found" />
+        <test-name value="publishes an event" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -129,11 +120,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.publishes an event (1)" />
+        <item itemvalue="Jest.publishes an event" />
+        <item itemvalue="Jest.can fetch a list of tickets" />
         <item itemvalue="Jest.creates a ticket with valid inputs" />
         <item itemvalue="Jest.updates the ticket provided valid inputs" />
-        <item itemvalue="Jest.can fetch a list of tickets" />
-        <item itemvalue="Jest.returns a 404 if the ticket is not found" />
-        <item itemvalue="Jest.returns the ticket if the ticket is found" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +139,8 @@
       <workItem from="1609232880407" duration="9269000" />
       <workItem from="1609290220973" duration="15975000" />
       <workItem from="1609316235850" duration="6593000" />
-      <workItem from="1609507470154" duration="1303000" />
+      <workItem from="1609507470154" duration="1471000" />
+      <workItem from="1609576995393" duration="738000" />
     </task>
     <servers />
   </component>
