@@ -2,12 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3416a163-5d9b-4546-8305-0336e4639b24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/infra/k8s/orders-depl.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infra/k8s/orders-mongo-depl.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jpg/order-api.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jpg/order-svc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/__mocks__/nats-wrapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/app.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/models/order.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/models/ticket.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/nats-wrapper.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/__test__/delete.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/__test__/index.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/__test__/new.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/__test__/show.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/delete.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/new.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/routes/show.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/src/test/setup.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/orders/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/nats-wrapper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/nats-wrapper.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/index.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/index.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/new.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/routes/__test__/update.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tickets/src/test/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tickets/src/test/setup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s/ingress-srv.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s/ingress-srv.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skaffold.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/skaffold.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +42,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/orders/package.json" />
   </component>
   <component name="ProjectId" id="1mKCPsTL1tgtDF1KpIy2qNjSxsI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -47,9 +76,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tickets/src" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/common/src/events" />
       <recent name="$PROJECT_DIR$/infra/k8s" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/tickets/src" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.publishes an event (1)">
@@ -140,7 +170,7 @@
       <workItem from="1609290220973" duration="15975000" />
       <workItem from="1609316235850" duration="6593000" />
       <workItem from="1609507470154" duration="1471000" />
-      <workItem from="1609576995393" duration="738000" />
+      <workItem from="1609576995393" duration="3490000" />
     </task>
     <servers />
   </component>

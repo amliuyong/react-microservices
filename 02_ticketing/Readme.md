@@ -165,3 +165,8 @@ process.on('SIGTERM', () => stan.close());
 ## solution - use continuous version id
 ![](./jpg/handle-event.jpg)
 ![](./jpg/handle-event-using-versions.jpg)
+
+
+# Order service
+![](./jpg/order-svc.jpg)
+![](./jpg/order-api.png)

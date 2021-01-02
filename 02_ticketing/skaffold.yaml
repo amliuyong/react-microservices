@@ -33,3 +33,13 @@ build:
         manual:
           - src: '**/*.ts'
             dest: .
+
+    - image: amliyong/orders
+      context: orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.ts'
+            dest: .
+
