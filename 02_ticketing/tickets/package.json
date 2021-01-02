@@ -31,9 +31,9 @@
     "locate-path": "^5.0.0",
     "mongoose": "^5.9.7",
     "node-nats-streaming": "^0.2.6",
-    "pkg-dir": "^4.2.0",
     "ts-node-dev": "^1.1.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7",
+    "ts-node": "^9.1.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
