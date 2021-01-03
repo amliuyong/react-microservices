@@ -170,3 +170,154 @@ process.on('SIGTERM', () => stan.close());
 # Order service
 ![](./jpg/order-svc.jpg)
 ![](./jpg/order-api.png)
+
+## mongoose for Order and Ticket (ticket <-> order, 1-to-1 Ref)
+
+```typescript
+import mongoose from 'mongoose';
+import { OrderStatus } from '@yltickets/common';
+import { TicketDoc } from './ticket';
+
+export { OrderStatus };
+
+interface OrderAttrs {
+    userId: string;
+    status: OrderStatus;
+    expiresAt: Date;
+    ticket: TicketDoc;
+}
+
+interface OrderDoc extends mongoose.Document {
+    userId: string;
+    status: OrderStatus;
+    expiresAt: Date;
+    ticket: TicketDoc;
+}
+
+interface OrderModel extends mongoose.Model<OrderDoc> {
+    build(attrs: OrderAttrs): OrderDoc;
+}
+
+const orderSchema = new mongoose.Schema(
+    {
+        userId: {
+            type: String,
+            required: true,
+        },
+        status: {
+            type: String,
+            required: true,
+            enum: Object.values(OrderStatus),
+            default: OrderStatus.Created,
+        },
+        expiresAt: {
+            type: mongoose.Schema.Types.Date,
+        },
+        ticket: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Ticket',
+        },
+    },
+    {
+        toJSON: {
+            transform(doc, ret) {
+                ret.id = ret._id;
+                delete ret._id;
+            },
+        },
+    }
+);
+
+orderSchema.statics.build = (attrs: OrderAttrs) => {
+    return new Order(attrs);
+};
+
+const Order = mongoose.model<OrderDoc, OrderModel>('Order', orderSchema);
+
+export { Order };
+```
+## mongoose for Ticket
+```typescript
+import mongoose from 'mongoose';
+import { Order, OrderStatus } from './order';
+
+interface TicketAttrs {
+  title: string;
+  price: number;
+}
+
+export interface TicketDoc extends mongoose.Document {
+  title: string;
+  price: number;
+  isReserved(): Promise<boolean>;
+}
+
+interface TicketModel extends mongoose.Model<TicketDoc> {
+  build(attrs: TicketAttrs): TicketDoc;
+}
+
+const ticketSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+  },
+  {
+    toJSON: {
+      transform(doc, ret) {
+        ret.id = ret._id;
+        delete ret._id;
+      },
+    },
+  }
+);
+
+ticketSchema.statics.build = (attrs: TicketAttrs) => {
+  return new Ticket(attrs);
+};
+ticketSchema.methods.isReserved = async function () {
+  //NOTE: use keyword `function`: this === the ticket document that we just called 'isReserved' on
+  const existingOrder = await Order.findOne({
+    ticket: this,
+    status: {
+      $in: [
+        OrderStatus.Created,
+        OrderStatus.AwaitingPayment,
+        OrderStatus.Complete,
+      ],
+    },
+  });
+
+  return !!existingOrder;
+};
+
+const Ticket = mongoose.model<TicketDoc, TicketModel>('Ticket', ticketSchema);
+
+export { Ticket };
+```
+
+```typescript
+// populate
+const order = await Order.findById(req.params.orderId).populate('ticket');
+
+// Gen random mongo ObjectId 
+mongoose.Types.ObjectId();
+
+```
+
+```
+## OrderStatus
+```typescript
+export enum OrderStatus {
+  Created = 'created',
+  Cancelled = 'cancelled',
+  AwaitingPayment = 'awaiting:payment',
+  Complete = 'complete',
+}
+```
