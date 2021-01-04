@@ -330,3 +330,64 @@ export enum OrderStatus {
 ![expiration-svc](./jpg/expiration-svc.png)
 ![normally what is bull used for](./jpg/bull.png)
 ![expiration-queue](./jpg/expiration-queue.png)
+
+### OrderCreatedListener
+
+```typescript
+import {Listener, OrderCreatedEvent, Subjects} from '@yltickets/common';
+import {Message} from 'node-nats-streaming';
+import {queueGroupName} from './queue-group-name';
+import {expirationQueue} from '../../queues/expiration-queue';
+
+export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
+    subject: Subjects.OrderCreated = Subjects.OrderCreated;
+    queueGroupName = queueGroupName;
+
+    async onMessage(data: OrderCreatedEvent['data'], msg: Message) {
+        const delay = new Date(data.expiresAt).getTime() - new Date().getTime();
+        console.log('Waiting this many milliseconds to process the job:', delay);
+
+        // push data to redis Queue with delay
+        await expirationQueue.add(
+            {
+                orderId: data.id,
+            },
+            {
+                delay,
+            }
+        );
+
+        msg.ack();
+    }
+}
+
+```
+### expirationQueue
+```typescript
+import Queue from 'bull';
+import {ExpirationCompletePublisher} from '../events/publishers/expiration-complete-publisher';
+import {natsWrapper} from '../nats-wrapper';
+
+// data in Job
+interface Payload {
+    orderId: string;
+}
+
+// create a redis Queue
+const expirationQueue = new Queue<Payload>('order:expiration', {
+    redis: {
+        host: process.env.REDIS_HOST,
+    },
+});
+
+// Queue process job
+expirationQueue.process(async (job) => {
+    console.log("expirationQueue job:", job);
+    new ExpirationCompletePublisher(natsWrapper.client).publish({
+        orderId: job.data.orderId,
+    });
+});
+
+export {expirationQueue};
+
+```
