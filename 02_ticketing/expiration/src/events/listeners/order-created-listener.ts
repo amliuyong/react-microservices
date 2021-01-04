@@ -11,6 +11,7 @@ export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
         const delay = new Date(data.expiresAt).getTime() - new Date().getTime();
         console.log('Waiting this many milliseconds to process the job:', delay);
 
+        // push data to redis Queue with delay
         await expirationQueue.add(
             {
                 orderId: data.id,
