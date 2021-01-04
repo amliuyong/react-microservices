@@ -43,7 +43,7 @@ build:
           - src: '**/*.ts'
             dest: .
     - image: amliyong/expiration
-      context: orders
+      context: expiration
       docker:
         dockerfile: Dockerfile
       sync:
