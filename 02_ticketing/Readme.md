@@ -154,6 +154,10 @@ process.on('SIGTERM', () => stan.close());
 
 ```
 
+# Events
+
+![](./jpg/Events-Published-by-each-svc.png)
+
 # How to handle disorder event
 
 ## Last event processed tracked by resource ID
