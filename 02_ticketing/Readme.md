@@ -392,3 +392,6 @@ expirationQueue.process(async (job) => {
 export {expirationQueue};
 
 ```
+
+# Payment
+![payment svc](./jpg/payment-svc.png)
