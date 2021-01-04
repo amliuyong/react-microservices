@@ -29,10 +29,16 @@ sudo vi /etc/hosts
 ```
 
 
-# secret for jwt-secret
+# secret for jwt-secret and stripe-secret
 ```
  kubectl create secret  generic jwt-secret --from-literal JWT_KEY=mykey123!
+ 
+ // for payments
+ kubectl create secret  generic stripe-secret --from-literal STRIPE_KEY=mykey123STRIPE_KEY
+
 ```
+
+
 
 ![overview](./jpg/overview.jpg)
 ![services](./jpg/services.jpg)
