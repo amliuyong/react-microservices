@@ -34,7 +34,13 @@ sudo vi /etc/hosts
  kubectl create secret  generic jwt-secret --from-literal JWT_KEY=mykey123!
  
  // for payments
- kubectl create secret  generic stripe-secret --from-literal STRIPE_KEY=mykey123STRIPE_KEY
+ private stripe key from 
+
+ https://dashboard.stripe.com/test/dashboard
+ 
+ key=sk_test_xxxxx
+ 
+ kubectl create secret  generic stripe-secret --from-literal STRIPE_KEY=${key}
 
 ```
 
