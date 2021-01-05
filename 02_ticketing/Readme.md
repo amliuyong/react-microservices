@@ -405,3 +405,9 @@ export {expirationQueue};
 ![events for payments](./jpg/payments-events.png)
 ![payments flow stripes API](./jpg/payments_stripes.png)
 ![payments_flow](./jpg/payments_flow.png)
+
+# Client
+
+![client_routes](./jpg/client_routes.png)
+![client_componets](./jpg/client_componets.png)
+![clinet_data_init_flow_in_nextJs](./jpg/clinet_data_init_flow_in_nextJs.png)
