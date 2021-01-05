@@ -88,6 +88,13 @@ it('returns a 201 with valid inputs - use stripe mock', async () => {
     expect(chargeOptions.amount).toEqual(price * 100);
     expect(chargeOptions.currency).toEqual('usd');
 
+    const payment = await Payment.findOne({
+        orderId: order.id,
+        stripeId: 'stripe_id_test_Id-xxxxxxxx',
+    });
+    expect(payment).not.toBeNull();
+
+
 });
 
 it.skip('returns a 201 with valid inputs - use stripe api', async () => {

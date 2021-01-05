@@ -400,6 +400,7 @@ export {expirationQueue};
 ```
 
 # Payment
+
 ![payment svc](./jpg/payment-svc.png)
 ![events for payments](./jpg/payments-events.png)
 ![payments flow stripes API](./jpg/payments_stripes.png)
