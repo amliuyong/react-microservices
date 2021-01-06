@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
+    "start:prod": "ts-node src/index.ts",
+    "build": "tsc",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest"
   },
