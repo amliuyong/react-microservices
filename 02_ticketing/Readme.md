@@ -417,3 +417,117 @@ export {expirationQueue};
 ![client_routes](./jpg/client_routes.png)
 ![client_componets](./jpg/client_componets.png)
 ![clinet_data_init_flow_in_nextJs](./jpg/clinet_data_init_flow_in_nextJs.png)
+
+## hooks - useRequest
+```javascript
+
+import axios from 'axios';
+import {useState} from 'react';
+
+export default ({url, method, body, onSuccess}) => {
+    const [errors, setErrors] = useState(null);
+
+    const doRequest = async (props = {}) => {
+        try {
+            setErrors(null);
+            const response = await axios[method](url,
+                {...body, ...props}
+            );
+
+            if (onSuccess) {
+                onSuccess(response.data);
+            }
+
+            return response.data;
+        } catch (err) {
+            setErrors(
+                <div className="alert alert-danger">
+                    <h4>Ooops....</h4>
+                    <ul className="my-0">
+                        {err.response.data.errors.map(err => (
+                            <li key={err.message}>{err.message}</li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        }
+    };
+
+    return {doRequest, errors};
+};
+
+```
+## Component - TicketShow
+```javascript
+import useRequest from '../../hooks/use-request';
+import Router from "next/router";
+
+
+const TicketShow = ({ticket}) => {
+    const {doRequest, errors} = useRequest({
+        url: '/api/orders',
+        method: 'post',
+        body: {
+            ticketId: ticket.id
+        },
+        onSuccess: (order) => {
+            console.log("order:", order);
+            Router.push('/orders/[orderId]', `/orders/${order.id}`)
+        }
+    });
+
+    return (
+        <div>
+            <h1>{ticket.title}</h1>
+            <h4>Price: {ticket.price}</h4>
+            {errors}
+            <button onClick={(event) => doRequest()} className="btn btn-primary">Purchase</button>
+        </div>
+    )
+};
+
+TicketShow.getInitialProps = async (context, client, currentUser) => {
+    const {ticketId} = context.query;
+    const {data} = await client.get(`/api/tickets/${ticketId}`)
+    return {ticket: data};
+}
+
+export default TicketShow;
+```
+## Header
+```javascript
+import Link from 'next/link';
+
+export default ({currentUser}) => {
+    const links = [
+        !currentUser && {label: 'Sign Up', href: '/auth/signup'},
+        !currentUser && {label: 'Sign In', href: '/auth/signin'},
+        currentUser && {label: 'Sell Ticket', href: '/tickets/new'},
+        currentUser && {label: 'My Orders', href: '/orders'},
+        currentUser && {label: 'Sign Out', href: '/auth/signout'}
+    ]
+        .filter(linkConfig => linkConfig)
+        .map(({label, href}) => {
+            return (
+                <li key={href} className="nav-item">
+                    <Link href={href}>
+                        <a className="nav-link">{label}</a>
+                    </Link>
+                </li>
+            );
+        });
+
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <Link href="/">
+                <a className="navbar-brand">GitTix</a>
+            </Link>
+
+            <div className="d-flex justify-content-end">
+                <ul className="nav d-flex align-items-center">{links}</ul>
+            </div>
+        </nav>
+    );
+};
+
+```
