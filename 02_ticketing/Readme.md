@@ -571,7 +571,14 @@ jobs:
       - run: kubectl rollout restart deployment auth-depl
 
 ```
-### ingress
+### ingress for digital-ocean
+
+https://kubernetes.github.io/ingress-nginx/deploy/#digital-ocean
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.43.0/deploy/static/provider/do/deploy.yaml
+```
+
 ```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
