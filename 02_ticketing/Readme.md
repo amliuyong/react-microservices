@@ -531,3 +531,43 @@ export default ({currentUser}) => {
 };
 
 ```
+
+# CICD 
+```
+kubectl config use-context docker-desktop
+
+```
+![cicd-options](./jpg/cicd-options.png)
+
+## Deploy to Digital Ocean  
+
+https://github.com/amliuyong/ticketing/blob/master/.github/workflows/deploy-auth.yaml
+
+```yaml
+name: deploy-auth
+
+on:
+  push:
+    branches: 
+      - master
+    paths:
+      - 'auth/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cd auth && docker build -t stephengrider/auth .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker push stephengrider/auth
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - run: doctl kubernetes cluster kubeconfig save ticketing
+      - run: kubectl rollout restart deployment auth-depl
+
+```
