@@ -645,3 +645,27 @@ spec:
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/component: controller
 ```
+
+# Addition Change
+
+In addition, related to this bug, you also need to make an update to the client's 'build-client.js' file. Change the baseURL for the server client from:
+
+baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local'
+
+to:
+
+baseURL: 'Whatever_your_purchased_domain_is'
+
+So for me, I purchased ticketing-app-prod.xyz, so I would update this line to:
+
+baseURL: 'http://www.ticketing-app-prod.xyz/'
+
+
+You may recall that we configured all of our services to only use cookies when the user is on an HTTPS connection.  This will cause auth to fail while we do this initial deploy of our app, since we don't have HTTPS setup right now.
+
+To disable the HTTPS checking, go to the app.ts file in the auth, orders, tickets, and payments services.  At the cookie-session middleware, change the following:
+
+secure: process.env.NODE_ENV !== 'test',
+to:
+
+secure: false,
