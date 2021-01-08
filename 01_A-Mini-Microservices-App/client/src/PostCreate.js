@@ -10,8 +10,8 @@ export default () => {
     await axios.post('http://posts.com/posts/create', {
       title
     });
-
     setTitle('');
+    window.location.reload();
   };
 
   return (
